@@ -36,6 +36,7 @@ X = X / float(len(chars))
 #convert Y to a one-hot array
 y = np_utils.to_categorical(y)
 
+#picle training data
 with open('python_model_training/models/training_data.pkl', 'wb') as f:
-    pickle.dump([X, y], f)
+    pickle.dump([X, y, str_length, char_to_int, int_to_char], f)
     print("Training data saved to pickle")
