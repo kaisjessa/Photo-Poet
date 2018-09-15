@@ -1,8 +1,11 @@
 var poempic = document.getElementById("poemimg");
 
+$("#submit").hide();
+
 $("#poemimg").change(element => {
+  element = element.target;
   if (!element.files || !element.files[0]) {
-    document.getElementById("submit").hidden = true;
+    $("#submit").hide();
     return;
   }
   var file = element.files[0];
@@ -18,9 +21,8 @@ $("#poemimg").change(element => {
 function send() {
   var element = document.getElementById("poemimg");
   if (!element.files || !element.files[0]) {
-    document.getElementById("submit").hidden = true;
-    alert("Whoops! Something went wrong; no file is selected. "
-        + "The submission button is now hidden.");
+    alert("Whoops! Something went wrong; no file is selected.");
+    $("#submit").hide();
     return;
   }
   var reader = new FileReader();
