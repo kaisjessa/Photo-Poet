@@ -32,7 +32,7 @@
       files = document.getElementById("image-file").files;
       if (!files || !files[0]) return;
       var reader = new FileReader();
-      reader.readAsBinaryString(files[0]);
+      reader.readAsDataURL(files[0]);
       reader.onloadend = async () => {
         const response = await fetch("/clarifai", {
           method: "POST",
@@ -41,12 +41,11 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            image: reader.result
+            image: reader.result.slice(22)
           })
         });
-        const content = await response.text();
+        const content = await response.json();
         console.log(content);
-        console.log(JSON.parse(content));
       };
     }
   </script>
