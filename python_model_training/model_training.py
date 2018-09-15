@@ -7,7 +7,36 @@ import pandas as pd
 # from keras.layers import LSTM
 # from keras.utils import np_utils
 
+#open text file with poems
 text = (open("./text_data/test_data.txt").read()).lower()
 
+#sort list of unique characters in text
 chars = sorted(list(set(text)))
-print(chars)
+
+#dictionary mapping chars to ints
+char_to_int = {char:n for n,char in enumerate(chars)}
+#dictionary mapping ints to chars
+int_to_char = {n:char for n,char in enumerate(chars)}
+
+#training and target lists
+X,y = [],[]
+text_length = len(text)
+#length of string given to NN to make prediction
+str_length = 15
+
+#loop through text
+for i in range(0, text_length - str_length, 1):
+    #add a list of length str_length to training data
+    X.append([char_to_int[c] for c in text[i : i + str_length]])
+    #add the next character in the sequence to target list
+    #y[n] will have the character than comes after x[n][str_length-1]
+    #we want the NN to predict the next letter based on previous letters
+    y.append(char_to_int[text[i + str_length]])
+
+
+#reshape training data for the NN
+X = np.reshape(X, (len(X), str_length, 1))
+#normalize the training data so that all values are between 0 and 1
+X = X / float(len(chars))
+#convert Y to a one-hot array
+Y = np_utils.to_categorical(Y)
