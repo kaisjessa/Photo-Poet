@@ -16,7 +16,7 @@ with open('./python_model_training/models/training_data.pkl', 'rb') as f:
 model = keras.models.load_model("./python_model_training/models/test_model.h5")
 
 #take random line of integer training data
-int_train = X[0]
+int_train = X[random.randint(0, len(X))]
 
 #convert training data back to array of chars
 chars_array = [int_to_char[n] for n in int_train]
