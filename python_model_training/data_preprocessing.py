@@ -33,7 +33,7 @@ for i in range(0, text_length - str_length, 1):
 X_2 = np.reshape(X, (len(X), str_length, 1))
 #normalize the training data so that all values are between 0 and 1
 X_2 = X_2 / float(len(chars))
-#convert Y to a one-hot array
+#convert Y to a one-hot array··
 y_2 = np_utils.to_categorical(y)
 
 #picle training data
