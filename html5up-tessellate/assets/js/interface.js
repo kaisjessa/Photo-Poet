@@ -1,4 +1,4 @@
-var poempic = document.getElementById("poemimg");
+
 
 $("#submit").hide();
 $("#result").hide();
