@@ -26,8 +26,14 @@ http.createServer(function(request, response) {
         var data = JSON.parse(body).image;
         app.models.predict(clarifai.GENERAL_MODEL, {base64: data}).then(
           predictions => {
+            var concepts = predictions.outputs[0].data.concepts;
             response.writeHead("200", {"Content-Type": "application/json"});
-            response.write(JSON.stringify(predictions));
+            response.write(
+              JSON.stringify(
+                (concepts.filter(a => a.value > 0.9)
+             || [concepts[0]]).map(a => a.name)
+              )
+            );
             response.end();
           },
           error => {
