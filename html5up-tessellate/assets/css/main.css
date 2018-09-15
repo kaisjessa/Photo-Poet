@@ -122,7 +122,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #666;
+		color: white;
 		margin: 0 0 1em 0;
 		font-weight: 100;
 		line-height: 1.5em;
@@ -2168,7 +2168,8 @@ input, select, textarea {
 	#header {
 		position: relative;
 		margin: 0;
-		background-image: url("images/overlay.png"), url("../../images/header1.jpg");
+		background-image: url("images/overlay.png"), url("../../images/header2.jpg");
+
 		background-size: auto, cover;
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
@@ -2178,7 +2179,7 @@ input, select, textarea {
 	}
 
 		#header header h1 {
-			font-size: 2.25em;
+			font-size: 2.5em;
 			line-height: 1.25em;
 			margin-bottom: 0;
 		}
@@ -2204,19 +2205,21 @@ input, select, textarea {
 	}
 
 		.main > header {
-			background: #fff;
+			background-image: url("../../images/wood.jpeg");
 			text-align: center;
 			padding: 5em 0 5em 0;
 			margin: 0;
 		}
 
 			.main > header h2 {
+				background-image: url("images/wood.jpeg");
 				font-size: 2.25em;
 				font-weight: 100;
 				margin-bottom: 0;
 			}
 
 			.main > header p {
+				background-image: url("images/wood.jpeg");
 				margin: 2em 0 0 0;
 				padding: 0;
 				text-align: center;
