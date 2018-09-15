@@ -10,19 +10,19 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script type="text/javascript" src="assets/js/interface.js"></script>
 	</head>
 	<body class="is-preload">
-
 		<!-- Header -->
 			<section id="header" class="dark">
-				<img src = ""
 				<header>
 					<h1>Welcome to Tessellate</h1>
 					<p>A free responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-					<input type = "file" id = "poemimg" accept = "image/*" onclick="myFunc()">
-					<button type = "button" id = "butt" onclick = "send()" style = "display: none">Yeet</button>
 				</header>
+				<center>
+					<img src="#" id="poempic" hidden /><br /><br />
+					<input type="file" id="poemimg" class="filebutton" accept="image/*"><br /><br />
+					<button type="button" id="submit" onclick="send()" hidden>Go!</button>
+				</center>
 				<footer>
 					<a href="#first" class="button scrolly">Proceed to second phase</a>
 				</footer>
@@ -402,29 +402,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				var poempic = document.getElementById("poemimg");
-
-
-function myFunc() {
-	$("input").change(function(e) {
-
-	for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-
-		var file = e.originalEvent.srcElement.files[i];
-
-		var img = document.createElement("img");
-		var reader = new FileReader();
-		reader.onloadend = function() {
-			 img.src = reader.result;
-		 }
-		 reader.readAsDataURL(file);
-		 $("input").after(img);
-	 }
-	 document.getElementById("butt").style.display = "block";
-	});
-}
-			</script>
-
+			<script src="assets/js/interface.js"></script>
 	</body>
 </html>
