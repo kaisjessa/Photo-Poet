@@ -1,6 +1,7 @@
 var poempic = document.getElementById("poemimg");
 
 $("#submit").hide();
+$("#result").hide();
 
 $("#poemimg").change(element => {
   element = element.target;
@@ -39,6 +40,7 @@ function send() {
       })
     });
     const data = await response.json();
-    console.log(data);
+    document.getElementById("result").innerHTML = data.join(", ");
+    $("#result").show();
   }
 }
