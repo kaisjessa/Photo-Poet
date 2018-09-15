@@ -18,7 +18,7 @@ int_to_char = {n:char for n,char in enumerate(chars)}
 X,y = [],[]
 text_length = len(text)
 #length of string given to NN to make prediction
-str_length = 15
+str_length = 100
 
 #loop through text
 for i in range(0, text_length - str_length, 1):
@@ -30,13 +30,13 @@ for i in range(0, text_length - str_length, 1):
     y.append(char_to_int[text[i + str_length]])
 
 #reshape training data for the NN
-X = np.reshape(X, (len(X), str_length, 1))
+X_2 = np.reshape(X, (len(X), str_length, 1))
 #normalize the training data so that all values are between 0 and 1
-X = X / float(len(chars))
+X_2 = X_2 / float(len(chars))
 #convert Y to a one-hot array
-y = np_utils.to_categorical(y)
+y_2 = np_utils.to_categorical(y)
 
 #picle training data
 with open('python_model_training/models/training_data.pkl', 'wb') as f:
-    pickle.dump([X, y, str_length, char_to_int, int_to_char], f)
+    pickle.dump([X_2, y_2, str_length, char_to_int, int_to_char, chars, X, y], f)
     print("Training data saved to pickle")
