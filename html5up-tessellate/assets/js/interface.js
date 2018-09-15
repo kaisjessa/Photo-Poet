@@ -37,7 +37,7 @@ function send() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        image: reader.result.slice(22)
+        image: reader.result.split(",")[1]
       })
     });
     const data = await response.json();
