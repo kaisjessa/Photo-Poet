@@ -1,0 +1,10 @@
+Task list:
+	Python:
+		- Train and save a poetry generation model in Python with Tensorflow
+	Clarifai:
+		- Use the js clarifai api
+	Website:
+		- Upload image button
+		- Image is sent to clarifai for keywords
+		- Keyword(s) are used as input for the python model
+		- Show user poem with their keyword(s)
