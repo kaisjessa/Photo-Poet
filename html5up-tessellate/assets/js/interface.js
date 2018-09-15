@@ -1,5 +1,6 @@
 
 
+$("#poempic").hide();
 $("#submit").hide();
 $("#result").hide();
 

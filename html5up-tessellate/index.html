@@ -19,7 +19,7 @@
 				<header>
 					<h1>Welcome to Your Boy</h1>
 					<p>You already know who it is</p>
- 
+
 				</header>
 				<footer>
 					<a href="#first" class="button scrolly">Learn More</a>
@@ -32,11 +32,14 @@
 					<div class="container">
 						<h2>The newest poet to hit the books?</h2>
 						<p style = "color: white;">Your Boy is a machine learning algorithm that creates poetry from images. Cool? We think so. Try it for yourself!</p>
-						<button type = "button">
-							<input type="file" id="poemimg" class="filebutton" accept="image/*">Ok
-						</button>
 					</div>
 				</header>
+				<center>
+					<img src="#" id="poempic" style="max-height:40vh" /><br /><br />
+					<input type="file" id="poemimg" class="filebutton" accept="image/*"><br /><br />
+					<button id="submit" onclick="send()">Go!</button><br /><br />
+					<span id="result" style="padding:5px;background-color:#0004;color:#fff;font-family:monospace"></span>
+				</center>
 				<div class="content dark style1 featured">
 					<div class="container">
 						<div class="row">
@@ -402,29 +405,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				var poempic = document.getElementById("poemimg");
-
-
-function myFunc() {
-	$("input").change(function(e) {
-
-	for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-
-		var file = e.originalEvent.srcElement.files[i];
-
-		var img = document.createElement("img");
-		var reader = new FileReader();
-		reader.onloadend = function() {
-			 img.src = reader.result;
-		 }
-		 reader.readAsDataURL(file);
-		 $("input").after(img);
-	 }
-	 document.getElementById("butt").style.display = "block";
-	});
-}
-			</script>
-
+			<script src="assets/js/interface.js"></script>
 	</body>
 </html>
