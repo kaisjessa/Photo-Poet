@@ -14,14 +14,14 @@ with open('models/objects.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
     X, y, char_to_int, int_to_char, chars = pickle.load(f)
 
 #load model
-model = keras.models.load_model("models/medium_model_012.h5")
+model = keras.models.load_model("models/medium_model_015.h5")
 # model = keras.models.load_model("models/current_best_model.h5")
 
 model_json = model.to_json()
 with open("models/model.json", "w") as f:
     f.write(model_json)
 
-sample_word = "falling"# if len(sys.argv) < 2 else sys.argv[1]
+sample_word = ""# if len(sys.argv) < 2 else sys.argv[1]
 def check_model(keyword):
     #take random line of integer training data as starting input
     if len(keyword) > 0:
