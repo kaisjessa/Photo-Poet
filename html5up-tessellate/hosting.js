@@ -1,5 +1,5 @@
-var http = require("http");
-var fs = require("fs");
+const http = require("http");
+const fs = require("fs");
 const clarifai = require("clarifai");
 
 const app = new clarifai.App({
