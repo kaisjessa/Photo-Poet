@@ -10,17 +10,18 @@ from keras.utils import np_utils
 from data_preprocessing import *
 
 #load model
-model = keras.models.load_model("models/current_medium_model.h5")
+model = keras.models.load_model("models/medium_model_001.h5")
 
 #take random line of integer training data as starting input
 int_train = X[random.randint(0, len(X))]
 
 #convert training data back to array of chars
 chars_array = [int_to_char[n] for n in int_train]
+starting_text = '\n' + ''.join(chars_array) + '\n'
 
 
 #number of characters to generate
-for i in range(100):
+for i in range(400):
     #reshape data to feed to NN
     x = np.reshape(int_train, (1, len(int_train), 1))
     #normalize for NN
@@ -38,8 +39,9 @@ for i in range(100):
     int_train.append(int_prediction)
     #drop first element for next iteration
     int_train = int_train[1:len(int_train)]
-# text = ""
-# for c in chars_array[100:]:
-#     text += c
-# print(text)
-print(''.join(chars_array))
+
+predicted_text = ""
+for c in chars_array[100:]:
+    predicted_text += c
+print("Starting text: ", starting_text)
+print("Predicted text: ", predicted_text)
