@@ -1,6 +1,7 @@
 #imports
 import numpy as np
 from keras.utils import np_utils
+import pickle
 
 #open text file with poems
 text = (open("text_data/test_poetry4.txt").read()).lower()
@@ -36,3 +37,6 @@ X_2 = np.reshape(X, (len(X), str_length, 1))
 X_2 = X_2 / float(len(chars))
 #convert Y to a one-hot array··
 y_2 = np_utils.to_categorical(y)
+
+with open('models/objects.pkl', 'wb') as f:
+    pickle.dump([X, y, char_to_int, int_to_char, chars], f)

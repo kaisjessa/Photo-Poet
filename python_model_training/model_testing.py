@@ -7,10 +7,14 @@ from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.utils import np_utils
-from data_preprocessing import *
+import pickle
+#from data_preprocessing import *
+
+with open('models/objects.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+    X, y, char_to_int, int_to_char, chars = pickle.load(f)
 
 #load model
-model = keras.models.load_model("models/medium_model_008.h5")
+model = keras.models.load_model("models/medium_model_009.h5")
 
 model_json = model.to_json()
 with open("models/model.json", "w") as f:
@@ -55,8 +59,7 @@ def check_model(keyword):
         int_train = int_train[1:len(int_train)]
 
     predicted_text = ""
-    for c in chars_array[100:]:
+    for c in chars_array:
         predicted_text += c
-    print("Starting text: ", starting_text)
-    print("Predicted text: ", predicted_text)
-check_model(keyword)
+    return(predicted_text[predicted_text.find('\n'):predicted_text.rfind('\n')])
+print(check_model(keyword))
