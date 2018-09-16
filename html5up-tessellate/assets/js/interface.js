@@ -29,6 +29,7 @@ function send() {
   var reader = new FileReader();
   reader.readAsDataURL(element.files[0] || file);
   reader.onloadend = async () => {
+    document.getElementById("result").innerHTML = "Analysing image and generating poem...";
     const response = await fetch("/clarifai", {
       method: "POST",
       headers: {
