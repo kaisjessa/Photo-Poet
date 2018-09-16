@@ -6,11 +6,7 @@ from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.utils import np_utils
-import pickle
-
-#open training data pickle
-with open('./python_model_training/models/training_data.pkl', 'rb') as f:
-    X_2, y_2, _, _, _, _, _, _ = pickle.load(f)
+from data_preprocessing import *
 
 #Keras NN
 model = Sequential()
