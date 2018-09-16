@@ -4,12 +4,12 @@ from keras.utils import np_utils
 import pickle
 
 #open text file with poems
-text = (open("./text_data/test_data.txt").read()).lower()
+text = (open("./text_data/shakespeare.txt").read()).lower()
 
 #sort list of unique characters in text
 chars = sorted(list(set(text)))
 
-#dictionary mapping chars to ints
+#dictionary mapping cchars to ints
 char_to_int = {char:n for n,char in enumerate(chars)}
 #dictionary mapping ints to chars
 int_to_char = {n:char for n,char in enumerate(chars)}

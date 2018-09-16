@@ -21,14 +21,21 @@ http.createServer(function(request, response) {
         app.models.predict(clarifai.GENERAL_MODEL, {base64: data}).then(
           predictions => {
             var concepts = predictions.outputs[0].data.concepts;
-            concepts = concepts.filter(a => a.value > 0.9) || [concepts[0]];
-            concepts = concepts.slice(0, 5);
+            var filtered = concepts.filter(a => a.value > 0.9);
+            if (filtered.length == 0) filtered = [concepts[0]];
+            concepts = filtered.slice(0, 5);
             response.writeHead("200", {"Content-Type": "application/json"});
             response.write(JSON.stringify(concepts.map(a => a.name)));
             response.end();
           },
           error => {
-            console.log(error);
+            response.writeHead("500", {"Content-Type": "text/html"});
+            response.write(JSON.stringify({
+              code: error.data.status.code,
+              desc: error.data.status.description,
+              outputs = error.data.status.outputs
+            }));
+            response.end();
           }
         );
       });

@@ -16,22 +16,29 @@ with open('./python_model_training/models/training_data.pkl', 'rb') as f:
 model = Sequential()
 #add long short term memory cell
 #output is 400 units (length), input_shape is (number_of_inputs, input_length), return full sequence
-#LAYER 1 (input layer)
-model.add(LSTM(400, input_shape=(X_2.shape[1], X_2.shape[2]), return_sequences=True))
+	#model.add(LSTM(400, input_shape=(X_2.shape[1], X_2.shape[2]), return_sequences=True)) #layer 1
+model.add(LSTM(256, input_shape=(X_2.shape[1], X_2.shape[2]), return_sequences=False))
 #account for overfitting
 model.add(Dropout(0.2))
 #add another LSTM layer
-#LAYER 2 (hidden layer)
-model.add(LSTM(400))
+# model.add(LSTM(800, return_sequences=True)) #layer 2
+	#model.add(LSTM(400, return_sequences=True)) #layer 2
 #account for overfitting
-model.add(Dropout(0.2))
+	#model.add(Dropout(0.2))
+
+	#model.add(LSTM(400)) #layer X
+#account for overfitting
+	#model.add(Dropout(0.2))
+# #add another LSTM layer
+# model.add(LSTM(800)) #layer X
+# #account for overfitting
+# model.add(Dropout(0.2))
 #Fully connected (dense) output layer
-#LAYER 3 (output layer)
-model.add(Dense(y_2.shape[1], activation='softmax'))
+model.add(Dense(y_2.shape[1], activation='softmax')) #layer 4
 #minimize loss
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 #train the model
-model.fit(X_2, y_2, epochs=1, batch_size=100)
+model.fit(X_2, y_2, epochs=1, batch_size=50)
 #save the model
 model.save("./python_model_training/models/test_model.h5")
-print("Works!")
+print("Training Completed!")
