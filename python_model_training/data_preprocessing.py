@@ -3,7 +3,7 @@ import numpy as np
 from keras.utils import np_utils
 
 #open text file with poems
-text = (open("text_data/test_poetry.txt").read()).lower()
+text = (open("text_data/test_poetry4.txt").read()).lower()
 
 #sort list of unique characters in text
 chars = sorted(list(set(text)))
