@@ -59,5 +59,5 @@ def check_model(keyword):
     for c in chars_array[100-len(keyword):]:
         predicted_text += c
     #return(predicted_text[predicted_text.find('\n'):predicted_text.rfind('\n')])
-    return(predicted_text)
+    return(predicted_text[:predicted_text.rfind('\n')])
 print(check_model(sample_word))
