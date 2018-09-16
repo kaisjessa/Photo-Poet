@@ -14,7 +14,7 @@ with open('models/objects.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
     X, y, char_to_int, int_to_char, chars = pickle.load(f)
 
 #load model
-model = keras.models.load_model("models/medium_model_009.h5")
+model = keras.models.load_model("models/medium_model_010.h5")
 
 model_json = model.to_json()
 with open("models/model.json", "w") as f:
