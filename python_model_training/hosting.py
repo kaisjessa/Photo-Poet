@@ -7,7 +7,8 @@ CORS(app)
 
 @app.route("/", methods = ["POST"])
 def serveRoot():
-    return subprocess.check_output(["python3", "model_testing.py"])
+    data = json.loads(request.data)
+    return subprocess.check_output(["python3", "model_testing.py", data["keyword"]])
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 5000)
