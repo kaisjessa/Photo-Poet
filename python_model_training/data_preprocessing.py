@@ -4,7 +4,7 @@ from keras.utils import np_utils
 import pickle
 
 #open text file with poems
-text = (open("./text_data/test_data.txt").read()).lower()
+text = (open("./text_data/shakespeare.txt").read()).lower()
 
 #sort list of unique characters in text
 chars = sorted(list(set(text)))
