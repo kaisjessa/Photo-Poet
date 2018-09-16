@@ -1,36 +1,30 @@
 #imports
 import numpy as np
 import pandas as pd
-import pickle
 import random
 import keras.models
 from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.utils import np_utils
-
-with open('./python_model_training/models/training_data.pkl', 'rb') as f:
-    X_2, y_2, str_length, _, int_to_char, chars, X, y = pickle.load(f)
+from data_preprocessing import *
 
 #load model
-model = keras.models.load_model("./python_model_training/models/working_model.h5")
+model = keras.models.load_model("./python_model_training/models/final_model.h5")
 
-#take random line of integer training data
+#take random line of integer training data as starting input
 int_train = X[random.randint(0, len(X))]
-
 
 #convert training data back to array of chars
 chars_array = [int_to_char[n] for n in int_train]
-#print(chars_array)
 
 
 #number of characters to generate
-# num_chars = 1000
-for i in range(100):
+for i in range(1000):
     #reshape data to feed to NN
     x = np.reshape(int_train, (1, len(int_train), 1))
+    #normalize for NN
     x = x / float(len(chars))
-    #print(x)
 
     #the prediction is the index of the next character index
     #argmax takes the highest number in the onehot array
@@ -39,14 +33,13 @@ for i in range(100):
 
     #append prediction to string array for output
     chars_array.append(int_to_char[int_prediction])
-    #print(model.predict(x, verbose=0))
-    #print(np.argmax(model.predict(x, verbose=0)))
 
     #append index to index array
     int_train.append(int_prediction)
-    #
+    #drop first element for next iteration
     int_train = int_train[1:len(int_train)]
-text = ""
-for c in chars_array[100:]:
-    text += c
-print(text)
+# text = ""
+# for c in chars_array[100:]:
+#     text += c
+# print(text)
+print(''.join(chars_array))

@@ -32,5 +32,5 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 #train the model
 model.fit(X_2, y_2, epochs=1, batch_size=100)
 #save the model
-model.save("./python_model_training/models/test_model.h5")
+model.save("./python_model_training/models/fast_model.h5")
 print("Training Completed!")
