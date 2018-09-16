@@ -29,7 +29,13 @@ http.createServer(function(request, response) {
             response.end();
           },
           error => {
-            console.log(error);
+            response.writeHead("500", {"Content-Type": "text/html"});
+            response.write(JSON.stringify({
+              code: error.data.status.code,
+              desc: error.data.status.description,
+              outputs = error.data.status.outputs
+            }));
+            response.end();
           }
         );
       });
