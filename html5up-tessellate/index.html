@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title></title>
+		<title>Poem.me</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,7 +18,7 @@
 
 				<header>
 					<h1>Welcome to Your Boy</h1>
-					<p>You already know who it is</p>
+					<p style = "color: white;">From pictures to words. Within seconds.</p>
 
 				</header>
 				<footer>
@@ -28,69 +28,64 @@
 
 		<!-- First -->
 			<section id="first" class="main">
-				<header>
+				<div class="content dark style1 featured">
+
 					<div class="container">
-						<h2>The newest poet to hit the books?</h2>
-						<p style = "color: white;">Your Boy is a machine learning algorithm that creates poetry from images. Cool? We think so. Try it for yourself!</p>
+
+						<div class="row">
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-camera"></span></span>
+									<header>
+										<h3>Upload a Pic</h3>
+									</header>
+									<p>All you need to do is upload a picture of your choosing; it can be of food, a plant, or yourself! Images can be uploaded with a variety of extensions by simply pressing the button below.</p>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-clock-o"></span></span>
+									<header>
+										<h3>Wait a Few Seconds</h3>
+									</header>
+									<p>In just a few seconds, it will be processed by two different machine learning algorithms, one that will extract features from the picture and another that will create a poem out of them!</p>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-pencil"></span></span>
+									<header>
+										<h3>Read Away</h3>
+									</header>
+									<p>Your custom-generated poem will be displayed under the picture you uploaded! This way, you'll be able to see the correlation between the two and enjoy some AI-generated literature!</p>
+								</section>
+							</div>
+							<div class="col-12">
+								<footer>
+									<a href="#second" class="button scrolly">Try It Out</a>
+								</footer>
+							</div>
+						</div>
 					</div>
-				</header>
+				</div>
+
+
+
+				</section>
+
+
+				<section id="second" class="main" style = "background-image: url("../../images/paper.png")">
+
 				<center>
 					<img src="#" id="poempic" style="max-height:40vh" /><br /><br />
 					<input type="file" id="poemimg" class="filebutton" accept="image/*"><br /><br />
 					<button id="submit" onclick="send()">Go!</button><br /><br />
 					<span id="result" style="padding:5px;background-color:#0004;color:#fff;font-family:monospace"></span>
 				</center>
-				<div class="content dark style1 featured">
-					<div class="container">
-						<div class="row">
-							<div class="col-4 col-12-narrow">
-								<section>
-									<span class="feature-icon"><span class="icon fa-clock-o"></span></span>
-									<header>
-										<h3>Gravida</h3>
-									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
-								</section>
-							</div>
-							<div class="col-4 col-12-narrow">
-								<section>
-									<span class="feature-icon"><span class="icon fa-bolt"></span></span>
-									<header>
-										<h3>Vivamus</h3>
-									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
-								</section>
-							</div>
-							<div class="col-4 col-12-narrow">
-								<section>
-									<span class="feature-icon"><span class="icon fa-cloud"></span></span>
-									<header>
-										<h3>Accumsan</h3>
-									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
-								</section>
-							</div>
-							<div class="col-12">
-								<footer>
-									<a href="#second" class="button scrolly">Gravida tempor lacinia</a>
-								</footer>
-							</div>
-						</div>
-					</div>
-				</div>
 			</section>
 
-		<!-- Second -->
-			<section id="second" class="main">
+
+<!--
 				<header>
 					<div class="container">
 						<h2>Euismod sed feugiat lorem tempus magna</h2>
@@ -130,9 +125,9 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
-		<!-- Third -->
+		<!-- Third
 			<section id="third" class="main">
 				<header>
 					<div class="container">
@@ -188,7 +183,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
 		<!-- Basic Elements -->
 		<!--
@@ -358,11 +353,18 @@
 			<section id="fourth" class="main">
 				<header>
 					<div class="container">
-						<h2>Sed feugiat ipsum consequat</h2>
-						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
-						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
+						<h2>Reach the Team</h2>
+<br>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
 					</div>
 				</header>
+				<!--
 				<div class="content style4 featured">
 					<div class="container medium">
 						<form method="post" action="#">
@@ -380,20 +382,14 @@
 						</form>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
 		<!-- Footer -->
 			<section id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
+
 				<div class="copyright">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; KAA 2018. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</section>

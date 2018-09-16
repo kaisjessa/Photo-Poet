@@ -2205,21 +2205,24 @@ input, select, textarea {
 	}
 
 		.main > header {
-			background-image: url("../../images/wood.jpeg");
+			background-image: url("../../images/wood3.jpeg");
+			background: #490822;
 			text-align: center;
 			padding: 5em 0 5em 0;
 			margin: 0;
 		}
 
 			.main > header h2 {
-				background-image: url("images/wood.jpeg");
+				background-image: url("images/wood3.jpeg");
+				background: #490822;
 				font-size: 2.25em;
 				font-weight: 100;
 				margin-bottom: 0;
 			}
 
 			.main > header p {
-				background-image: url("images/wood.jpeg");
+				background-image: url("images/wood3.jpeg");
+				background: #490822;
 				margin: 2em 0 0 0;
 				padding: 0;
 				text-align: center;
@@ -2234,11 +2237,13 @@ input, select, textarea {
 			}
 
 			.main > .content.dark {
-				background: #433;
+				background-image: url("../images/wood.jpeg");
+				background-color: #433;
 			}
 
 			.main > .content.style1 {
-				background: url("images/bgtr.svg") top right no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/overlay.png"), linear-gradient(45deg, #b39c68, #a56365, #412e4c);
+				backround-image: url("../../images/wood3.jpeg");
+				/*background: url("images/bgtr.svg") top right no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("../../images/wood2.jpeg"), linear-gradient(45deg, #b39c68, #a56365, #412e4c);*/
 			}
 
 			.main > .content.style2 {
