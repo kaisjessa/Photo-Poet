@@ -10,7 +10,7 @@ from keras.utils import np_utils
 from data_preprocessing import *
 
 #load model
-model = keras.models.load_model("models/medium_model_005.h5")
+model = keras.models.load_model("models/medium_model_007.h5")
 
 model_json = model.to_json()
 with open("models/model.json", "w") as f:
