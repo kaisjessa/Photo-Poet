@@ -1,6 +1,5 @@
 $("#poempic").hide();
 $("#submit").hide();
-$("#result").hide();
 
 var file = null;
 
@@ -42,10 +41,11 @@ function send() {
     });
     const data = await response.json();
     if (data.code) {
-      document.getElementById("result").innerHTML = "Server error! (Error Code: " + data.code.toString() + "). Perhaps the file format is not supported by ClarifAI.";
+      document.getElementById("result").innerHTML = "Server error! (Error Code: " + data.code.toString() + "). Perhaps the file format is not supported by ClarifAI. <label for='poemimg'><button style='font-family:monospace'>Try Again</button></label>";
       console.log(data.outputs);
     } else {
       document.getElementById("result").innerHTML = data.join(", ");
+      // window.open("#third", "_self");
     }
     $("#result").show();
   }

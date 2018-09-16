@@ -73,24 +73,22 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* Weird Label Hack for styling file selector */
+#third {
+	padding: 5vh 20vw;
+	background-image: linear-gradient(135deg, #433, #866);
+	background-size: 100%;
+	color: #fff7;
+}
 
-.file-selector {
-	border: 1px solid #000c;
+#result {
+	border: 2px solid #fffa;
+	background-color: #fff1;
 	border-radius: 4px;
-	padding: 2px 5px;
-	margin: 2px;
-	background-color: #0008;
-	color: #fffc;
-	display: inline-block;
+	padding: 5vh 5vw;
 }
 
-.file-selector:hover {
-	background-color: #0009;
-}
-
-.file-selector:active {
-	background-color: #000a;
+.linklike {
+	text-decoration: underline;
 }
 
 /* Basic */
