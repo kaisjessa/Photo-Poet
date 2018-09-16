@@ -21,12 +21,15 @@ model_json = model.to_json()
 with open("models/model.json", "w") as f:
     f.write(model_json)
 
-sample_word = "testing"# if len(sys.argv) < 2 else sys.argv[1]
+sample_word = "falling"# if len(sys.argv) < 2 else sys.argv[1]
 def check_model(keyword):
     #take random line of integer training data as starting input
-    int_train = X[random.randint(0, len(X))][:-len(keyword)]
-    for c in keyword:
-        int_train.append(char_to_int[c])
+    if len(keyword) > 0:
+        int_train = X[random.randint(0, len(X))][:-len(keyword)]
+        for c in keyword:
+            int_train.append(char_to_int[c])
+    else:
+        int_train = X[random.randint(0, len(X))]
     #convert training data back to array of chars
     chars_array = [int_to_char[n] for n in int_train]
     #print(chars_array)
