@@ -1,6 +1,7 @@
 (async () => {
   const http = require("http");
   const fs = require("fs");
+  const fetch = require("node-fetch");
   const clarifai = require("clarifai");
 
   const app = new clarifai.App({
@@ -25,9 +26,23 @@
               var filtered = concepts.filter(a => a.value > 0.9);
               if (filtered.length == 0) filtered = [concepts[0]];
               concepts = filtered.slice(0, 5);
-              response.writeHead("200", {"Content-Type": "application/json"});
-              response.write(JSON.stringify(concepts.map(a => a.name)));
-              response.end();
+              var concept = concepts[0];
+              (async () => {
+                const answer = await fetch("http://10.21.164.93:5000", {
+                  method: "POST",
+                  headers: {
+                    "Accept": "application/json",
+                    "Content-Header": "application/json"
+                  },
+                  body: JSON.stringify({
+                    keyword: concept
+                  })
+                });
+                const content = await answer.text();
+                response.writeHead("200", {"Content-Type": "application/json"});
+                response.write(content);
+                response.end();
+              })();
             },
             error => {
               response.writeHead("500", {"Content-Type": "text/html"});

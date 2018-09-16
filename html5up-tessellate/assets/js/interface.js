@@ -39,14 +39,9 @@ function send() {
         image: reader.result.split(",")[1]
       })
     });
-    const data = await response.json();
-    if (data.code) {
-      document.getElementById("result").innerHTML = "Server error! (Error Code: " + data.code.toString() + "). Perhaps the file format is not supported by ClarifAI. <label for='poemimg'><button style='font-family:monospace'>Try Again</button></label>";
-      console.log(data.outputs);
-    } else {
-      document.getElementById("result").innerHTML = data.join(", ");
-      // window.open("#third", "_self");
-    }
+    const data = await response.text();
+    document.getElementById("result").innerHTML = data.replace(/\n/g, "<br />");
+    // window.open("#third", "_self");
     $("#result").show();
   }
 }
