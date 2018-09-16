@@ -32,7 +32,7 @@ model.add(Dense(y_2.shape[1], activation='softmax')) #layer 4
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 print("Model compiled")
 
-filepath = "/python_model_training/models/current_best_model.h5"
+filepath = "models/current_best_model.h5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 
