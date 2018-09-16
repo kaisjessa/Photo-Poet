@@ -23,7 +23,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -41,10 +42,10 @@ blockquote, q {
 	quotes: none;
 }
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
 
 table {
 	border-collapse: collapse;
@@ -70,6 +71,26 @@ input, select, textarea {
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+}
+
+/* Weird Label Hack for styling file selector */
+
+.file-selector {
+	border: 1px solid #000c;
+	border-radius: 4px;
+	padding: 2px 5px;
+	margin: 2px;
+	background-color: #0008;
+	color: #fffc;
+	display: inline-block;
+}
+
+.file-selector:hover {
+	background-color: #0009;
+}
+
+.file-selector:active {
+	background-color: #000a;
 }
 
 /* Basic */

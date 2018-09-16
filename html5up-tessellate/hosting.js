@@ -33,7 +33,7 @@ http.createServer(function(request, response) {
             response.write(JSON.stringify({
               code: error.data.status.code,
               desc: error.data.status.description,
-              outputs = error.data.status.outputs
+              outputs: error.data.status.outputs
             }));
             response.end();
           }

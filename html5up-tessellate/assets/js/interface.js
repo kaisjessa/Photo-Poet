@@ -1,16 +1,16 @@
-
-
 $("#poempic").hide();
 $("#submit").hide();
 $("#result").hide();
 
+var file = null;
+
 $("#poemimg").change(element => {
   element = element.target;
-  if (!element.files || !element.files[0]) {
+  if ((!element.files || !element.files[0]) && !file) {
     $("#submit").hide();
     return;
   }
-  var file = element.files[0];
+  file = element.files[0] || file;
   var reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onloadend = () => {
@@ -22,13 +22,13 @@ $("#poemimg").change(element => {
 
 function send() {
   var element = document.getElementById("poemimg");
-  if (!element.files || !element.files[0]) {
+  if ((!element.files || !element.files[0]) && !file) {
     alert("Whoops! Something went wrong; no file is selected.");
     $("#submit").hide();
     return;
   }
   var reader = new FileReader();
-  reader.readAsDataURL(element.files[0]);
+  reader.readAsDataURL(element.files[0] || file);
   reader.onloadend = async () => {
     const response = await fetch("/clarifai", {
       method: "POST",
@@ -41,7 +41,12 @@ function send() {
       })
     });
     const data = await response.json();
-    document.getElementById("result").innerHTML = data.join(", ");
+    if (data.code) {
+      document.getElementById("result").innerHTML = "Server error! (Error Code: " + data.code.toString() + "). Perhaps the file format is not supported by ClarifAI.";
+      console.log(data.outputs);
+    } else {
+      document.getElementById("result").innerHTML = data.join(", ");
+    }
     $("#result").show();
   }
 }
