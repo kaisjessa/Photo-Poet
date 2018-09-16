@@ -59,7 +59,8 @@ def check_model(keyword):
         int_train = int_train[1:len(int_train)]
 
     predicted_text = ""
-    for c in chars_array:
+    for c in chars_array[100:]:
         predicted_text += c
-    return(predicted_text[predicted_text.find('\n'):predicted_text.rfind('\n')])
+    #return(predicted_text[predicted_text.find('\n'):predicted_text.rfind('\n')])
+    return(predicted_text)
 print(check_model(keyword))
