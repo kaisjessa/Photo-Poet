@@ -10,7 +10,7 @@ from keras.utils import np_utils
 from data_preprocessing import *
 
 #load model
-model = keras.models.load_model("models/medium_model_002.h5")
+model = keras.models.load_model("models/medium_model_003.h5")
 
 #take random line of integer training data as starting input
 int_train = X[random.randint(0, len(X))]
