@@ -21,7 +21,7 @@ model_json = model.to_json()
 with open("models/model.json", "w") as f:
     f.write(model_json)
 
-sample_word = ""# if len(sys.argv) < 2 else sys.argv[1]
+sample_word = "" if len(sys.argv) < 2 else sys.argv[1]
 def check_model(keyword):
     #take random line of integer training data as starting input
     if len(keyword) > 0:

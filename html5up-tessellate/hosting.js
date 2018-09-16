@@ -35,7 +35,7 @@
                     "Content-Header": "application/json"
                   },
                   body: JSON.stringify({
-                    keyword: concept
+                    keyword: concept.name
                   })
                 });
                 const content = await answer.text();

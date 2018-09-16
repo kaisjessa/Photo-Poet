@@ -9,8 +9,7 @@ CORS(app)
 def serveRoot():
     try:
         data = json.loads(request.data)
-        return str(data)
-        # return subprocess.check_output(["python3", "model_testing.py", data["keyword"]])
+        return subprocess.check_output(["python3", "model_testing.py", data["keyword"]])
     except:
         return traceback.format_exc()
 
