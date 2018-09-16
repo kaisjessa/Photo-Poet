@@ -4,7 +4,7 @@ from keras.utils import np_utils
 import pickle
 
 #open text file with poems
-text = (open("./text_data/test_poetry2.txt").read()).lower()
+text = (open("./text_data/small_sample.txt").read()).lower()
 
 #sort list of unique characters in text
 chars = sorted(list(set(text)))
@@ -39,6 +39,6 @@ X_2 = X_2 / float(len(chars))
 y_2 = np_utils.to_categorical(y)
 
 #picle training data
-with open('python_model_training/models/training_data.pkl', 'wb') as f:
-    pickle.dump([X_2, y_2, str_length, char_to_int, int_to_char, chars, X, y], f)
-    print("Training data saved to pickle")
+# with open('python_model_training/models/training_data.pkl', 'wb') as f:
+#     pickle.dump([X_2, y_2, str_length, char_to_int, int_to_char, chars, X, y], f)
+#     print("Training data saved to pickle")
