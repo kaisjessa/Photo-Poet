@@ -10,7 +10,7 @@ def serveRoot():
     try:
         data = json.loads(request.data)
         return subprocess.check_output(["python3", "model_testing.py", data["keyword"]])
-    except e:
+    except:
         return traceback.format_exc()
 
 if __name__ == "__main__":
