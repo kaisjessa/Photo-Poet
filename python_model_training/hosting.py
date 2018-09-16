@@ -9,9 +9,10 @@ CORS(app)
 def serveRoot():
     try:
         data = json.loads(request.data)
+        return str(data)
         return subprocess.check_output(["python3", "model_testing.py", data["keyword"]])
     except e:
         return traceback.format_exc()
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = 5000)
+    app.run(host = "0.0.0.0", port = 5000, debug = True)
