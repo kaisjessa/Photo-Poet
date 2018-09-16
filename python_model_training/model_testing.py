@@ -7,7 +7,7 @@ from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.utils import np_utils
-import pickle
+import pickle, sys
 #from data_preprocessing import *
 
 with open('models/objects.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
@@ -20,19 +20,12 @@ model_json = model.to_json()
 with open("models/model.json", "w") as f:
     f.write(model_json)
 
-
-
-
-keyword = ""
+keyword = "" if len(sys.argv) < 2 else sys.argv[1]
 def check_model(keyword):
     #take random line of integer training data as starting input
-    int_train = X[random.randint(0, len(X))]
-    '''
-    int_train = int_train[:len(keyword)]
+    int_train = X[random.randint(0, len(X))][:-len(keyword)]
     for c in keyword:
         int_train.append(char_to_int[c])
-    print(len(int_train))
-    '''
     #convert training data back to array of chars
     chars_array = [int_to_char[n] for n in int_train]
     #print(chars_array)
