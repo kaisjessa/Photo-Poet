@@ -2025,7 +2025,7 @@ input, select, textarea {
 	input[type="submit"],
 	input[type="reset"],
 	button,
-	.button {
+	.button, .button-dark {
 		-moz-transition: all 0.25s ease-in-out;
 		-webkit-transition: all 0.25s ease-in-out;
 		-ms-transition: all 0.25s ease-in-out;
@@ -2042,6 +2042,10 @@ input, select, textarea {
 		text-align: center;
 		text-decoration: none;
 	}
+
+.button-dark {
+	background: #0004;
+}
 
 		input[type="button"]:hover,
 		input[type="submit"]:hover,
