@@ -4,7 +4,7 @@ from keras.utils import np_utils
 import pickle
 
 #open text file with poems
-text = (open("./text_data/shakespeare.txt").read()).lower()
+text = (open("./text_data/test_poetry2.txt").read()).lower()
 
 #sort list of unique characters in text
 chars = sorted(list(set(text)))
@@ -19,6 +19,8 @@ X,y = [],[]
 text_length = len(text)
 #length of string given to NN to make prediction
 str_length = 100
+print("Unique chars:", len(chars))
+print("Text length:", text_length)
 
 #loop through text
 for i in range(0, text_length - str_length, 1):
