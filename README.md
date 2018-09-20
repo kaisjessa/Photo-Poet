@@ -1,2 +1,4 @@
-# hack-the-north-2018
-Hack the North 2018
+# Photo Poet
+Writes a poem based on a submitted image
+
+(Still in progress)
