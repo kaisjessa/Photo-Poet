@@ -1,10 +1,10 @@
-Task list:
-	Python:
-		- Train and save a poetry generation model in Python with Tensorflow
-	Clarifai:
-		- Use the js clarifai api
-	Website:
-		- Upload image button
-		- Image is sent to clarifai for keywords
-		- Keyword(s) are used as input for the python model
-		- Show user poem with their keyword(s)
+Python:
+	- Fully train model
+	- Improve model
+	- Make fully trained model compatible with JS
+	- Write poem using multiple keywords
+	- NLP?
+Website back-end:
+	- Combine servers into one Node server (i.e. remove Flask)
+	- Model predictions in JS instead of calling Python script using JS compatible model
+	- Website no longer relies on Python (Python is only used for model training, not predictions)

@@ -28,7 +28,7 @@
               concepts = filtered.slice(0, 5);
               var concept = concepts[0];
               (async () => {
-                const answer = await fetch("http://10.21.164.93:5000", {
+                const answer = await fetch("http://localhost:5000", {
                   method: "POST",
                   headers: {
                     "Accept": "application/json",
