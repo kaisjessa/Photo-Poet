@@ -1,3 +1,4 @@
+#Python script for training the machine learning model
 #imports
 import numpy as np
 from keras.callbacks import ModelCheckpoint
@@ -10,7 +11,7 @@ from char_data_preprocessing import *
 #Keras NN
 model = Sequential()
 #add long short term memory cell
-#output is 700 units (length), input_shape is (number_of_inputs, input_length), return full sequence
+#output_shape is (_, 700), input_shape is (number_of_inputs, input_length), return full sequence
 model.add(LSTM(700, input_shape=(X_2.shape[1], X_2.shape[2]), return_sequences=True)) #layer 1
 #account for overfitting
 model.add(Dropout(0.2))
