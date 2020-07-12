@@ -5,7 +5,7 @@
   const clarifai = require("clarifai");
 
   const app = new clarifai.App({
-    apiKey: "b8f4339020aa4524bdf092820a486c3f"
+    apiKey: ""
   });
 
   http.createServer(function(request, response) {
